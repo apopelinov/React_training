@@ -18,15 +18,4 @@ type Props = {
 const ProfileScreen = ({ navigation, route }: Props) => {
   return <Text>This is {route.params.name}'s profile</Text>;
 };
-const HomeScreen = ({ navigation }: Props) => {
-  return (
-    <Button
-      title="Go to Jane's profile"
-      onPress={() =>
-        navigation.navigate('Profile', { name: 'Jane' })
-      }
-    />
-  );
-};
-
-export default HomeScreen;
+export default ProfileScreen;
