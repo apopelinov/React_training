@@ -1,9 +1,11 @@
 import React from 'react';
-import { Button,Text } from 'react-native';
+import { Button,Text, View } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 type RootStackParamList = {
   Home: undefined, // undefined because you aren't passing any params to the home screen
   Profile: { name: string }; 
+  Weather: undefined; 
+  
 };
 type ProfileScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -20,12 +22,22 @@ const ProfileScreen = ({ navigation, route }: Props) => {
 };
 const HomeScreen = ({ navigation }: Props) => {
   return (
-    <Button
+    <View>
+          <Button
       title="Go to Jane's profile"
       onPress={() =>
         navigation.navigate('Profile', { name: 'Jane' })
       }
     />
+              <Button
+      title="Go to Weather"
+      onPress={() =>
+        navigation.navigate('Weather')
+      }
+    />
+    </View>
+
+    
   );
 };
 
