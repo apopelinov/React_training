@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Geolocation from 'react-native-geolocation-service';
+import { useTranslation } from "react-i18next";
+import  '../../i18n';
 const WeatherScreen = () => {
+  const { t, i18n } = useTranslation();
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [poss] = useState<Position>({latitude:'',longitude:'',city:'',weather:'',humidity:'',temp:0,wind:'',pressure:'' });
@@ -19,7 +22,6 @@ const WeatherScreen = () => {
   };
 const getWeatherWithCoord = async (location:Position) => {
   try {
-    console.log('https://api.openweathermap.org/data/2.5/weather?lat='+location.latitude+'&lon='+location.longitude+'&appid=b4b675963f07c6637d013a1e5edc1066')
    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?lat='+location.latitude+'&lon='+location.longitude+'&appid=b4b675963f07c6637d013a1e5edc1066');
    const json = await response.json();
    console.log(json);
@@ -73,11 +75,11 @@ const getLocationWeather = async (location:Position) => {
 
     {isLoading ? <ActivityIndicator/> : (  
       <View>
-        <Text>Location: {poss.city}</Text>
-        <Text>Temperature:{poss.temp}°C</Text>
-        <Text>Humidity:{poss.humidity}%</Text>
-        <Text>Weather: {poss.weather}</Text>
-        <Text>Wind: {poss.wind} m/s</Text>
+        <Text>{t('weather.Location')}: {poss.city}</Text>
+        <Text>{t('weather.Temperatire')}:{poss.temp}°C</Text>
+        <Text>{t('weather.Humidity')}:{poss.humidity}%</Text>
+        <Text>{t('weather.Weater')}: {poss.weather}</Text>
+        <Text>{t('weather.Wind')}: {poss.wind} m/s</Text>
 
       </View>
         
