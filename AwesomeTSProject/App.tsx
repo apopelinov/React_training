@@ -3,9 +3,7 @@ import { View, Text,Button} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/Home';
-import ProfileScreen from './src/screens/Profile';
 import WeatherScreen from './src/screens/Weather';
-import Locale from './src/screens/Locale';
 import './i18n';
 
 import { createStackNavigator } from '@react-navigation/stack';
@@ -25,11 +23,9 @@ function App() {
       <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Welcome' }}
+          options={{ title: "HomeScreen" }}
         />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Weather" component={WeatherScreen} />
-        <Stack.Screen name="Translate" component={Locale} />
 
               </Stack.Navigator>
               
