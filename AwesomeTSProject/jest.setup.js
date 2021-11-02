@@ -5,3 +5,4 @@ jest.mock('./node_modules/react-native-gesture-handler/lib/commonjs/RNGestureHan
 jest.mock('./node_modules/react-native-gesture-handler/lib/module/RNGestureHandlerModule', () =>
   require('./node_modules/react-native-gesture-handler/lib/module/mocks')
 );
+jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');

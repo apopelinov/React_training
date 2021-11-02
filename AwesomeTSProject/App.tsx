@@ -25,7 +25,7 @@ function App() {
           component={HomeScreen}
           options={{ title: "HomeScreen" }}
         /> 
-         {/* <Stack.Screen name="Weather" component={WeatherScreen} />  */}
+         <Stack.Screen name="Weather" component={WeatherScreen} /> 
 
               </Stack.Navigator>
               
