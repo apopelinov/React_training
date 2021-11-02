@@ -20,12 +20,12 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen
+       <Stack.Screen
           name="Home"
           component={HomeScreen}
           options={{ title: "HomeScreen" }}
-        />
-        <Stack.Screen name="Weather" component={WeatherScreen} />
+        /> 
+         {/* <Stack.Screen name="Weather" component={WeatherScreen} />  */}
 
               </Stack.Navigator>
               
